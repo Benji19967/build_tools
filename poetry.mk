@@ -3,11 +3,12 @@ PYTHON ?= 3.8
 PYTESTARGS ?=
 POETRY_VENV = .poetry_venv
 POETRY ?= ${POETRY_VENV}/bin/poetry
+POETRY_VERSION ?= 1.3.2
 
 ${POETRY_VENV}:
 	python -m venv ${POETRY_VENV}
 	${POETRY_VENV}/bin/pip install pip -U
-	${POETRY_VENV}/bin/pip install poetry 
+	${POETRY_VENV}/bin/pip install poetry==${POETRY_VERSION}
 	${POETRY} config virtualenvs.in-project true
 	${POETRY} config virtualenvs.create true
 
