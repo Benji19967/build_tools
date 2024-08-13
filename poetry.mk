@@ -18,7 +18,7 @@ poetry.lock: pyproject.toml | ${POETRY_VENV}
 	touch poetry.lock
 
 .venv: poetry.lock | ${POETRY_VENV}
-	${POETRY} install --remove-untracked
+	${POETRY} install --sync
 
 env: | .venv
 	ln -s .venv env
